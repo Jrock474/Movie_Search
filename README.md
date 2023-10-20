@@ -1,5 +1,9 @@
 <h1> Movie Search </h1>
 
+<img src="src/assets/Movie_Search_Preview.png">
+<img src="src/assets/movie_search_preview2.png">
+
+
   Movie Search is a dynamic webpaged fetches movies from an api based off queries provided as well as allowing users to view the details of specific movies
 
 <h1>API used: </h1>
