@@ -28,6 +28,13 @@ const Movies = () => {
     setMovies(data.Search);
   };
 
+  const lightBoxClick = (e) =>{
+    if(e.target.id == "lightbox-container"){
+      console.log(e.target.id)
+      setIsDetailSelected(false)
+    }
+  }
+
   const getMovieDetails = async (imdbID) => {
     if (!isDetailSelected) {
       let response = await fetch(
@@ -53,7 +60,7 @@ const Movies = () => {
     <>
       {/* Lightbox effect whenever lightbox is active when user click on "More Details" */}
       {isDetailSelected ? (
-        <div id="lightbox-container">
+        <div id="lightbox-container" onClick={lightBoxClick}>
           <div id="lightbox">
             <div id="lightbox-image-container" >
               <img src={movieDetails.Poster} />
