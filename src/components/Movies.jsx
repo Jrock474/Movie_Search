@@ -16,7 +16,7 @@ const Movies = () => {
     setMovies([])
 
     let response = await fetch(
-      `http://www.omdbapi.com/?s=${movieSearch}&apikey=4479e73`
+      `https://www.omdbapi.com/?s=${movieSearch}&apikey=4479e73`
     );
     let data = await response.json();
 
@@ -31,7 +31,7 @@ const Movies = () => {
   const getMovieDetails = async (imdbID) => {
     if (!isDetailSelected) {
       let response = await fetch(
-        `http://www.omdbapi.com/?i=${imdbID}&apikey=4479e73`
+        `https://www.omdbapi.com/?i=${imdbID}&apikey=4479e73`
       );
       let data = await response.json();
       setMovieDetails(data);
