@@ -30,7 +30,6 @@ body{
   margin-left: 50px;
   margin-right: 50px;
   align-items: center;
-  
 }
 
 .movie-list{
@@ -43,6 +42,8 @@ body{
   margin-right: 25px;
   margin-top: 20px;
   margin-bottom: 20px;
+  border-style: groove;
+  text-overflow: wrap
 }
 
 .movie-list button{
@@ -71,8 +72,8 @@ body{
   flex-direction: column;
   background-color: rgb(39, 39, 39);
   color: rgb(255, 255, 255);
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
   margin-bottom: 20px;
 }
 
@@ -96,6 +97,8 @@ body{
 #lightbox p{
   padding-top: 5px;
   padding-bottom: 5px;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 .image-container{
@@ -126,17 +129,70 @@ body{
   padding-bottom: 5px;
 }
 
+h1{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.header{
+  display: flex;
+  padding-left: 50px;
+  padding-right: 50px;
+  justify-content: space-around;
+  background-color: rgb(107, 107, 12);
+}
+
+.search-container{
+  display: flex;
+  align-items: center;
+}
+
+.search-container button{
+  background-color: rgb(0, 0, 0);
+  width: 150px;
+  height: 30px;
+}
+
+.search-box{
+  height: 30px;
+  width: 300px;
+}
+
 
 @media(max-width:800px){
   html { font-size: 8px; }
 
   #lightbox{
     font-size: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  #lightbox p{
+    margin-left: 0px;
+    margin-right: 0px;
   }
 
   #lightbox img{
     max-width: 150px;
     max-height: 150px;
   }
+
+  .search-box{
+    height: auto;
+    width: auto;
+  }
+
+  .search-container button{
+    background-color: rgb(0, 0, 0);
+    width: 50px;
+    height: auto;
+  }
+
+  .header{
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  
 }
 

@@ -58,7 +58,6 @@ const Movies = () => {
             <div id="lightbox-image-container" >
               <img src={movieDetails.Poster} />
             </div>
-            <MovieDetaits movieEndpoint = {"Title:"}  details = {movieDetails.Title}/>
             <p>Title: {movieDetails.Title}</p>
             <p>Released: {movieDetails.Released}</p>
             <p>Summary: {movieDetails.Plot}</p>
@@ -72,32 +71,36 @@ const Movies = () => {
             </div>
           </div>
         </div>
+        
       ) : null}
-
+      <div className="header">
         <h1>Movie Search</h1>
-        <input
-          className="search-box"
-          type="text"
-          value={filteredText}
-          onChange={onSearchChange}
-          placeholder="Search"
-        />
-        <button onClick={userSearch}>Search</button>
-        <div className="movie-list-container">
-          <p id="error-message">{errorMessage}</p>
-          {movies.map((movie, index) => (
-            <li key={index} className="movie-list">
-                <div className="image-container">
-                  <img src={movie.Poster}></img>
-                </div>
-                <h2 className="movie-list-contents">{movie.Title}</h2>
-                <p className="movie-list-contents">{movie.Year}</p>
-                <div className="movie-list-contents">
-                  <button onClick={() => getMovieDetails(movie.imdbID)}>More Details</button>
-                </div>
-              </li>
-          ))}  
+        <div className="search-container">
+          <input
+            className="search-box"
+            type="text"
+            value={filteredText}
+            onChange={onSearchChange}
+            placeholder="Search"
+          />
+          <button onClick={userSearch}>Search</button>
         </div>
+      </div>
+      <div className="movie-list-container">
+        <p id="error-message">{errorMessage}</p>
+        {movies.map((movie, index) => (
+          <li key={index} className="movie-list">
+              <div className="image-container">
+                <img src={movie.Poster}></img>
+              </div>
+              <h2 className="movie-list-contents">{movie.Title}</h2>
+              <p className="movie-list-contents">{movie.Year}</p>
+              <div className="movie-list-contents">
+                <button onClick={() => getMovieDetails(movie.imdbID)}>More Details</button>
+              </div>
+            </li>
+        ))}  
+      </div>
     </>
   );
 };
